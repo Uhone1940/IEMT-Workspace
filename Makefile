@@ -20,3 +20,17 @@ evaluate:
 
 predict:
 	$(VENV_PY) -m ml_project.src.predict --artifacts-dir artifacts
+
+.PHONY: elec_synth elec_train elec_evaluate elec_predict
+
+elec_synth:
+	PATH=$$HOME/.local/bin:$$PATH python3 -m ml_project.src.electricity_synth --rows 2000 --output data/electricity_synth.csv
+
+elec_train:
+	PATH=$$HOME/.local/bin:$$PATH python3 -m ml_project.src.electricity_train --csv data/electricity_synth.csv --output-dir artifacts_electricity
+
+elec_evaluate:
+	PATH=$$HOME/.local/bin:$$PATH python3 -m ml_project.src.electricity_evaluate --artifacts-dir artifacts_electricity
+
+elec_predict:
+	PATH=$$HOME/.local/bin:$$PATH python3 -m ml_project.src.electricity_predict --artifacts-dir artifacts_electricity --from-csv data/electricity_synth.csv --head 5

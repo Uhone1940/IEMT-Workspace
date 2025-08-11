@@ -56,3 +56,42 @@ python -m ml_project.src.predict \
 ```
 
 Artifacts (model, config, metrics) are saved under `artifacts/` by default.
+
+## Electricity usage prediction system
+
+Schema:
+- Features: `residence_type`, `num_tenants`, `season`, `num_appliances`, `num_occupants`, `size_value`, `size_unit` (m2 or ft2), `solar_kwh`
+- Targets: `daily_kwh`, `monthly_kwh`, `hourly_kwh`
+
+Quickstart with synthetic data:
+
+```bash
+make elec_synth
+make elec_train
+make elec_evaluate
+make elec_predict
+```
+
+Train on your CSV:
+
+```bash
+python -m ml_project.src.electricity_train \
+  --csv path/to/your_electricity.csv \
+  --test-size 0.2 \
+  --random-state 42 \
+  --output-dir artifacts_electricity
+```
+
+Prediction on new rows (features only):
+
+```bash
+python -m ml_project.src.electricity_predict \
+  --artifacts-dir artifacts_electricity \
+  --from-csv path/to/new_rows.csv --head 10
+```
+
+CSV expectations:
+- Residence types: detached house, town house, apartment, cottage
+- Seasons: summer, autumn, winter, spring
+- `size_unit`: m2 or ft2 (conversion handled automatically)
+- Targets should be present for training; for prediction CSV, include features only.

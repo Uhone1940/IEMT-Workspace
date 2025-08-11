@@ -1,0 +1,38 @@
+{
+  "schema": {
+    "features": [
+      "residence_type",
+      "num_tenants",
+      "season",
+      "num_appliances",
+      "num_occupants",
+      "size_value",
+      "size_unit",
+      "solar_kwh"
+    ],
+    "targets": [
+      "daily_kwh",
+      "monthly_kwh",
+      "hourly_kwh"
+    ],
+    "categorical": [
+      "residence_type",
+      "season"
+    ],
+    "numeric": [
+      "num_tenants",
+      "num_appliances",
+      "num_occupants",
+      "size_m2",
+      "solar_kwh"
+    ]
+  },
+  "train_csv": "/workspace/data/electricity_synth.csv",
+  "test_size": 0.2,
+  "random_state": 42,
+  "model": {
+    "type": "RandomForestRegressor",
+    "n_estimators": 400
+  },
+  "model_path": "artifacts_electricity/electricity_20250811_211541.joblib"
+}
