@@ -1,0 +1,18 @@
+{
+  "dataset": "iris",
+  "model_type": "logistic",
+  "test_size": 0.2,
+  "random_state": 42,
+  "feature_names": [
+    "sepal length (cm)",
+    "sepal width (cm)",
+    "petal length (cm)",
+    "petal width (cm)"
+  ],
+  "target_names": [
+    "setosa",
+    "versicolor",
+    "virginica"
+  ],
+  "model_path": "artifacts/model_iris_logistic_20250811_210926.joblib"
+}
