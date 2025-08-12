@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume / CV</title>
+    <meta name="description" content="Professional resume/CV" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="identity">
+          <img class="avatar" src="./assets/avatar-placeholder.png" alt="Your photo" />
+          <div>
+            <h1 class="name">Your Name</h1>
+            <p class="role">Your Role / Title</p>
+            <div class="meta">
+              <a href="mailto:you@example.com">you@example.com</a>
+              <span>•</span>
+              <a href="tel:+1234567890">+1 234 567 890</a>
+              <span>•</span>
+              <a href="https://linkedin.com/in/your" target="_blank" rel="noreferrer">linkedin.com/in/your</a>
+              <span>•</span>
+              <a href="https://github.com/your" target="_blank" rel="noreferrer">github.com/your</a>
+              <span>•</span>
+              <span>City, Country</span>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button onclick="window.print()" class="btn">Download PDF</button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section>
+          <h2>Summary</h2>
+          <p>
+            Brief professional summary of 3–4 sentences highlighting your core skills,
+            domain expertise, and impact. Keep it concise and outcome-focused.
+          </p>
+        </section>
+
+        <section>
+          <h2>Experience</h2>
+          <article class="item">
+            <div class="item-head">
+              <h3>Company Name</h3>
+              <div class="item-meta">Role Title • Jan 2022 – Present • City, Country</div>
+            </div>
+            <ul>
+              <li>Achievement/impact statement with measurable outcome.</li>
+              <li>What you built, how you collaborated, what improved.</li>
+              <li>Stack/tools: list noteworthy technologies.</li>
+            </ul>
+          </article>
+          <article class="item">
+            <div class="item-head">
+              <h3>Company Name</h3>
+              <div class="item-meta">Role Title • Jan 2020 – Dec 2021 • City, Country</div>
+            </div>
+            <ul>
+              <li>Key project or responsibility with results.</li>
+              <li>Leadership, mentoring, or cross-team collaboration.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="two-col">
+          <div>
+            <h2>Projects</h2>
+            <article class="item">
+              <div class="item-head">
+                <h3>Project Name</h3>
+                <div class="item-meta"><a href="#">project.link</a> • Tech: X, Y, Z</div>
+              </div>
+              <p>One-liner describing what it does and why it matters.</p>
+            </article>
+            <article class="item">
+              <div class="item-head">
+                <h3>Project Name</h3>
+                <div class="item-meta"><a href="#">project.link</a> • Tech: A, B</div>
+              </div>
+              <p>Brief description and outcomes.</p>
+            </article>
+          </div>
+          <aside>
+            <h2>Skills</h2>
+            <ul class="skills">
+              <li>Language/Framework</li>
+              <li>Tool/Platform</li>
+              <li>Domain</li>
+              <li>Soft skill</li>
+            </ul>
+
+            <h2>Education</h2>
+            <div class="item">
+              <div class="item-head">
+                <h3>University Name</h3>
+                <div class="item-meta">Degree • 2016 – 2020</div>
+              </div>
+            </div>
+
+            <h2>Certifications</h2>
+            <ul class="bullets">
+              <li>Certification Name — Issuer (Year)</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Contact</h2>
+          <p>
+            Available for roles in X. Prefer email for contact.
+          </p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>© <span id="year"></span> Your Name</span>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
